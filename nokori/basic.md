@@ -1,6 +1,7 @@
 # 基本設計
 
-ノコリの基本設計書
+- 作成者: 横山巧駆 <seekseep@gmail.com>
+- 作成日: 2023年8月31日
 
 # ER図
 
@@ -32,9 +33,9 @@ Order {
   id ID
   aboSystemType ABOSystemType
   rhFactorType RHFactorType
-  amount Number
+  amount Number "正の整数"
   amountUnit AmountUnitType
-  contentsType ContentsType
+  contentsType BloodContentsType　"RBC赤血球、FFP新鮮凍結血漿、PLT血小板"
   ordererID ID
   createdAt DateTime
   updatedt DateTime
@@ -54,7 +55,7 @@ Stock {
   rhFactorType RHFactorType
   amount Number
   amountUnit AmountUnitType
-  contentsType BloodContentsType
+  contentsType BloodContentsType　"RBC, FFP, PLT"
   orderID ID
   organizationID ID
   createdAt DateTime
@@ -80,7 +81,3 @@ Order ||--o{ Stock: ""
 Account ||--o{ Order: ""
 Account ||--o{ Message: ""
 ```
-
-
-
-# ER図
